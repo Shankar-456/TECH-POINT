@@ -1,0 +1,223 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cart - TECH POINT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="css/style.css">
+<style>
+   /*CART ITEM CARDS (Updated Layout)*/
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  max-width: 1000px;   /* limit width */
+  margin: 20px auto;  /* center card */
+}
+
+.cart-left-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-item img{
+width:120px;
+height:auto;
+object-fit:cover;
+border-radius:10px;
+border:1px solid #ddd;
+margin-bottom:10px;
+}
+
+.cart-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; 
+}
+
+.cart-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #111;
+}
+
+/* More visible Price */
+.cart-info p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600; 
+  color: #222; 
+}
+
+/*RIGHT SIDE (Total & Remove Button) */
+.cart-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+  gap: 12px;
+}
+
+/* More visible Total */
+.cart-right p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700; 
+  color: #000;
+}
+
+
+.remove-btn{
+margin-top:12px;
+background:#e74c3c;
+border:none;
+color:white;
+padding:8px 20px;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+}
+
+.remove-btn:hover{
+background:#c0392b;
+}
+
+.qty-box{
+display:flex;
+justify-content:flex-start;
+align-items:center;
+gap:10px;
+margin:10px 0;
+}
+
+.qty-box button{
+width:32px;
+height:32px;
+border:none;
+background:#111;
+color:#fff;
+font-size:18px;
+border-radius:6px;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.qty-box button:hover{
+background:#333;
+}
+
+.qty-box span{
+font-size:16px;
+font-weight:bold;
+min-width:20px;
+text-align:center;
+}
+
+
+/* TOTAL SECTION BOX */
+.total-section{
+  width:90%;
+  max-width:1000px;
+  margin:40px auto;
+  padding:20px 25px;
+  background:#ffffff;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* TOTAL TEXT */
+.total-section h3{
+  font-size:20px;
+  font-weight:600;
+  margin:0;
+}
+
+/* PRICE NUMBER */
+#totalPrice{
+  color:#000;
+  font-weight:700;
+  font-size:22px;
+}
+
+/* CHECKOUT BUTTON */
+.checkout-btn{
+  background:#111;
+  color:#fff;
+  border:none;
+  padding:12px 30px;
+  font-size:15px;
+  font-weight:600;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* HOVER EFFECT */
+.checkout-btn:hover{
+  background:#333;
+}
+</style>
+
+</head>
+<body>
+
+
+<header class="top-header">
+  <div class="header-container">
+
+    <div class="brand">
+      <a href="index.html">TechPoint</a>
+    </div>
+
+    <nav class="menu">
+
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+
+      <!-- USER -->
+      <a href="profile.html" id="profileLink">Profile</a>
+
+      <a href="help.html">Help</a>
+
+      <!-- LOGIN -->
+      <a href="login.html" id="loginLink">Login</a>
+
+      <!-- LOGOUT -->
+      <a href="#" id="logoutBtn">Logout</a>
+
+    </nav>
+
+  </div>
+</header>
+
+<h2 class="page-title">YOUR CART</h2>
+
+<div class="cart-container" id="cartContainer"></div>
+
+<div class="total-section" id="totalSection" style="display:none;">
+  <h3>Total: ₹<span id="totalPrice">0</span></h3>
+  <button class="checkout-btn" id="checkoutBtn">CHECKOUT</button>
+</div>
+
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

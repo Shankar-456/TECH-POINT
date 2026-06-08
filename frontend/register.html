@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register - TechPoint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #ffffff;
+  color: #000;
+}
+
+/* HEADER */
+
+.top-header {
+  background: #000;
+  padding: 20px 0;
+}
+
+.header-container {
+  width: 90%;
+  margin: auto;
+}
+
+.brand a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* REGISTER SECTION */
+
+.register-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+.register-card {
+  width: 380px;
+}
+
+.register-card h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* INPUT STYLE */
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 5px;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid #000;
+}
+
+/* BUTTON */
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background: #333;
+}
+
+/* LINK */
+
+.link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.link a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* ERROR / SUCCESS */
+
+.message {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+</style>
+</head>
+<body>
+
+
+<header class="top-header">
+  <div class="header-container">
+
+    <div class="brand">
+      <a href="index.html">TechPoint</a>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="help.html">Help</a>
+      <a href="login.html">Login</a>
+    </nav>
+
+  </div>
+</header>
+
+<div class="register-section">
+  <div class="register-card">
+    <h2>Create Account</h2>
+
+    <div id="msg" class="message"></div>
+
+    <div class="input-group">
+      <input type="text" id="name" placeholder="Full Name">
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="mobile" placeholder="Mobile Number">
+    </div>
+
+    <div class="input-group">
+      <input type="email" id="email" placeholder="Email (optional)">
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="password" placeholder="Password">
+    </div>
+
+    <button class="register-btn" onclick="register()">REGISTER</button>
+
+    <div class="link">
+      Already have an account?
+      <a href="/login.html">Sign In</a>
+    </div>
+  </div>
+</div>
+
+<script>
+async function register() {
+
+  const name = document.getElementById("name").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const msg = document.getElementById("msg");
+
+  msg.innerText = "";
+  msg.className = "message";
+
+  // MOBILE VALIDATION
+const mobileRegex = /^[0-9]{10}$/;
+
+if (!mobileRegex.test(mobile)) {
+  msg.classList.add("error");
+  msg.innerText = "Mobile number must be 10 digits";
+  return;
+}
+
+// EMAIL VALIDATION (optional)
+if (email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  if (!emailRegex.test(email)) {
+    msg.classList.add("error");
+    msg.innerText = "Enter a valid email address";
+    return;
+  }
+}
+
+
+  try {
+    const res = await fetch("/api/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, mobile, email: email || null, password })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      msg.classList.add("error");
+      msg.innerText = data.message || "Registration failed";
+      return;
+    }
+
+    msg.classList.add("success");
+    msg.innerText = "Account created successfully! Redirecting to login...";
+
+    setTimeout(() => {
+      window.location.href = "/login.html";
+    }, 1500);
+
+  } catch (error) {
+    msg.classList.add("error");
+    msg.innerText = "Something went wrong";
+  }
+}
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

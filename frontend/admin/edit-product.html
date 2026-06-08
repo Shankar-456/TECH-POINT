@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Edit Product - Admin</title>
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+<div class="admin-container">
+
+<!-- SIDEBAR -->
+
+<div class="admin-sidebar">
+
+<h2>TechPoint</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="add-product.html">Add Product</a>
+<a href="manage-products.html">Products</a>
+<a href="manage-orders.html">Orders</a>
+<a href="manage-reviews.html">Reviews</a>
+<a href="manage-messages.html">Messages</a>
+<a href="admin-report.html">Reports</a>
+
+
+
+</div>
+
+
+<!-- MAIN CONTENT -->
+
+<div class="admin-content">
+
+<h1>Edit Product</h1>
+
+<form id="editForm" class="admin-form">
+
+<label>Product Name</label>
+<input type="text" id="name" required>
+
+<label>Description</label>
+<textarea id="description" required></textarea>
+
+<label>Price</label>
+<input type="number" id="price" min="1" required>
+
+<label>Brand</label>
+<input type="text" id="brand" required>
+
+<label>Category</label>
+<input type="text" id="category" required>
+
+<label>Stock</label>
+<input type="number" id="stock" min="0"required>
+
+<button type="submit">Update Product</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script src="../js/admin/editProduct.js"></script>
+
+
+</body>
+</html>

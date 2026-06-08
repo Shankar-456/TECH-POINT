@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Product - Admin</title>
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+<div class="admin-container">
+
+
+<div class="admin-sidebar">
+
+<h2>TechPoint</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="add-product.html">Add Product</a>
+<a href="manage-products.html">Products</a>
+<a href="manage-orders.html">Orders</a>
+<a href="manage-reviews.html">Reviews</a>
+<a href="manage-messages.html">Messages</a>
+<a href="admin-report.html">Reports</a>
+
+
+
+</div>
+
+
+
+<div class="admin-content">
+
+<h1>Add Product</h1>
+
+<form id="addProductForm" class="admin-form">
+
+<input type="text" id="name" placeholder="Product Name" required>
+
+<textarea id="description" placeholder="Description" required></textarea>
+
+<input type="number" id="price" placeholder="Price" min="1" required>
+
+<input type="text" id="brand" placeholder="Brand" required>
+
+<input type="text" id="category" placeholder="Category" required>
+
+<input type="number" id="stock" placeholder="Stock" min="0" required>
+
+<input type="file" id="image" required>
+
+<button type="submit">Add Product</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script src="../js/admin/addProduct.js"></script>
+
+</body>
+</html>
+
+
+

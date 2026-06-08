@@ -1,0 +1,103 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Help - TECH POINT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="top-header">
+  <div class="header-container">
+
+    <div class="brand">
+      <a href="index.html">TechPoint</a>
+    </div>
+
+    <nav class="menu">
+
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+
+      <!-- USER -->
+      <a href="profile.html" id="profileLink">Profile</a>
+
+      <a href="help.html">Help</a>
+
+      <!-- LOGIN -->
+      <a href="login.html" id="loginLink">Login</a>
+
+      <!-- LOGOUT -->
+      <a href="#" id="logoutBtn">Logout</a>
+
+    </nav>
+
+  </div>
+</header>
+
+  <h2 class="page-title">HELP CENTER</h2>
+
+  <div class="help-container">
+
+    <!-- FAQ SECTION -->
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+
+      <div class="faq">
+        <button type="button" class="faq-question">
+          How do I place an order?
+        </button>
+        <div class="faq-answer">
+          <p>Add products to cart and complete checkout.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button type="button" class="faq-question">
+          How can I track my order?
+        </button>
+        <div class="faq-answer">
+          <p>You can track orders inside your profile page.</p>
+        </div>
+      </div>
+
+      
+
+      <div class="faq">
+        <button type="button" class="faq-question">
+            Do you support online payment?
+        </button>
+        <div class="faq-answer">
+            <p>Currently, we only support <strong>Cash on Delivery (COD)</strong>.  
+               Online payment options will be available in future updates.
+            </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <div class="contact-section">
+      <h3>Still Need Help?</h3>
+
+      <form id="helpForm">
+
+        <input type="text" id="helpName" placeholder="Your Name" required>
+        <input type="email" id="helpEmail" placeholder="Your Email" required>
+        <textarea id="helpMessage" placeholder="Your Message" required></textarea>
+
+        <button type="submit">SEND MESSAGE</button>
+
+      </form>
+    </div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

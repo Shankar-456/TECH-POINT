@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechPoint Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<header class="top-header">
+  <div class="header-container">
+
+    <div class="brand">
+      <a href="index.html">TechPoint</a>
+    </div>
+     
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search products...">
+      <button onclick="searchProducts()">Search</button>
+    </div>
+
+    <nav class="menu">
+
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+
+      <!-- USER -->
+      <a href="profile.html" id="profileLink">Profile</a>
+
+      <a href="help.html">Help</a>
+
+      <!-- LOGIN -->
+      <a href="login.html" id="loginLink">Login</a>
+
+      <!-- LOGOUT -->
+      <a href="#" id="logoutBtn">Logout</a>
+
+    </nav>
+
+  </div>
+</header>
+  
+
+  <h1 class="title">All Products</h1>
+  <div id="product-list" class="product-grid"></div>
+
+  <script src="js/products.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
